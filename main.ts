@@ -17,8 +17,7 @@ const isOutOfWindow = (d1: Date, d2: Date): boolean => {
   const t1 = d1.getTime();
   const t2 = d2.getTime();
   const diff = Math.abs(t1 - t2); // in millisecond
-  const inHour = diff / 1000 / 60 / 60;
-  return inHour > 1;
+  return diff > 1 * 60 * 60 * 1000;
 };
 
 const file: string = fs.readFileSync("./order_brush_order.csv", "utf8");
